@@ -1,0 +1,24 @@
+{
+  "name": "music-player",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/main-arash021s/music-player.git"
+  },
+  "author": "Arash",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/main-arash021s/music-player/issues"
+  },
+  "homepage": "https://github.com/main-arash021s/music-player#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.0",
+    "boxicons": "^2.0.9",
+    "wavesurfer.js": "^5.2.0"
+  }
+}

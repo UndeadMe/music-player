@@ -1,0 +1,68 @@
+@import url(../custom/custom.css);
+.wrap {
+    margin-left: 80px;
+}
+.aside {
+    width: 80px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: var(--dark-black); */
+    background: linear-gradient(to bottom , var(--dark-black) 30% , var(--dark-black-purple) 100%);
+    box-shadow:  var(--main-dark-purple-shadow);
+    border-right: var(--light-border);
+    z-index: 10;
+}
+.aside::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    opacity: 0;
+    background: var(--gold);
+    clip-path: polygon(0 45%, 0 0, 100% 46%, 100% 90%);
+    animation: aside-wave 1s ease alternate ;
+}
+@keyframes aside-wave {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 1;
+    }
+}
+.aside-item {
+    position: relative;
+}
+.aside-item:not(:first-child) {
+    margin-top: 10px;
+}
+.aside-link {
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--gold) !important;
+    text-shadow: 0 0 10px var(--orange) ;
+}
+.aside-item.active::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--minimal-purple);
+    z-index: -1;
+    animation: asideActive 1s cubic-bezier(0,1.25,1,-0.25) alternate ;
+}
+@keyframes asideActive {
+    0% {
+        left: -80px;
+    }
+    100% {
+        left: 0;
+    }
+}

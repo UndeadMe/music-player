@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit songs</title>
+
+    <!-- ! -------------------------------- links -------------------------------- ! -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="public/content/css/edit-songs.css">
+</head>
+<body>
+    <!-- ! -------------------------------- aside -------------------------------- ! -->
+    <aside class="aside">
+        <ul class="list-unstyled py-3">
+            <li class="w-100 text-center aside-item d-flex">
+                <a href="my-musics.html" class="w-100 aside-link">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+            </li>
+            <li class="w-100 text-center aside-item d-flex">
+                <a href="" class="w-100 aside-link">
+                    <i class='bx bxs-playlist'></i>
+                </a>
+            </li>
+            <li class="w-100 text-center aside-item d-flex">
+                <a href="upload-music.html" class="w-100 aside-link">
+                    <i class='bx bx-cloud-upload'></i>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <!-- ! ------------------------------ end aside ------------------------------ ! -->
+    
+    <!-- ! -------------------------------- wrap --------------------------------- ! -->
+    <div class="wrap">
+        <div class="container">
+            
+            <!-- ! ----------------------------- wrap title ------------------------------ ! -->
+            <div class="row text-center">    
+                <h1 class="wrap-title">Edit <i class='bx bxl-tiktok bx-tada mx-2'></i> information</h1>
+            </div>
+            <!-- ! --------------------------- end wrap title ---------------------------- ! -->
+
+            <!-- ! ---------------------------- edit info box ---------------------------- ! -->
+            <form action="" autocomplete="off">
+                <div class="row justify-content-center">
+                    <div class="col-8 d-flex justify-content-between">
+    
+                        <div class="col-4">
+                        
+                            <label for="song-cover-input" class="upload-song-cover-label">
+                                <img src="" id="song-cover-img" alt="">
+                                <i class='bx bx-image-add'></i>
+                                <input type="file" id="song-cover-input" class="d-none" accept="image/*">
+                            </label>
+    
+                        </div>
+
+                        <div class="col-7 inputs-container">
+                            <!-- ! -------------------------- singer name input -------------------------- ! -->
+                            <div class="col-12">
+                                <span class="singer-input-title">singer name :</span>
+                                <input type="text" class="form-control singer-input" id="singer-input" placeholder="type your singer name">
+                                <p class="form-text"></p>
+                            </div>
+                            <!-- ! -------------------------- music name input --------------------------- ! -->
+                            <div class="col-12 mt-4">
+                                <span class="music-name-title">music name :</span>
+                                <input type="text" class="form-control music-name-input" id="music-name-input" placeholder="type your music name">
+                                <p class="form-text"></p>
+                            </div>
+                            <!-- ! ---------------------------- submit button ---------------------------- ! -->
+                            <div class="col-12">
+                                <input type="submit" class="submit-info" id="submit-info" value="edit information" disabled>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            <!-- ! -------------------------- end edit info box -------------------------- ! -->
+
+            <!-- ! ------------------------------ text Box ------------------------------- ! -->
+            <div class="row justify-content-center">
+                <div class="col-8 text-center" style="z-index: 10;">
+                    <p class="note-text">
+                        <span>Note :</span> You can only change the photo of the music and the name of the singer and the name of the music
+                    </p>
+                </div>
+            </div>
+            <!-- ! ---------------------------- end text box ----------------------------- ! -->
+
+        </div>
+    </div>
+    <!-- ! ------------------------------ end wrap ------------------------------- ! -->
+    
+    <script src="public/content/js/edit-music-info.js"></script>
+</body>
+</html>

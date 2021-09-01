@@ -1,0 +1,118 @@
+@import url(../../components/navbar/navbar.css);
+
+body {
+    background: linear-gradient(to right bottom , var(--dark-black-purple) 30% , var(--dark-purple) 100%);
+    overflow-x: hidden;
+}
+.wrap {
+    background-image: url(../img/upload-song/wave.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    margin-bottom: 85px;
+}
+.upload-title {
+    padding-top: 60px;
+    color: var(--gold);
+    font-weight: bolder;
+    text-transform: capitalize;
+    text-shadow: 0 0 20px var(--gold) , 0 0 50px var(--orange);
+    -webkit-text-stroke: 1px var(--gold);
+}
+/* ------------------------------- upload box ------------------------------- */
+.upload-box {
+    margin-top: 30px;
+    width: 100%;
+    height: 300px;
+    cursor: cell;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold) , 0 0 50px var(--gold);
+    text-transform: capitalize;
+    border-radius: 20px;
+    background: linear-gradient(to right bottom , var(--purple) 50% , var(--light-purple) 100%);
+    box-shadow: var(--main-dark-purple-shadow);
+}
+.upload-music-cover {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 20px;
+    background: linear-gradient(to right bottom , var(--purple) 50% , var(--light-purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 5rem;
+    cursor: cell;
+    text-shadow: 0 0 20px var(--gold) , 0 0 50px var(--gold);
+    box-shadow: var(--main-dark-purple-shadow);
+    overflow: hidden;
+}
+.upload-music-cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-black);
+    z-index: 1;
+    opacity: 0;
+    transition: 0.5s;
+}
+.upload-music-cover i {
+    z-index: 2;
+    opacity: 0;
+    transition: 0.5s;
+}
+.upload-music-cover:hover i {
+    opacity: 1;
+}
+.upload-music-cover:hover::before {
+    opacity: 0.3;
+}
+.form-control {
+    background : linear-gradient(to right , var(--purple) , var(--light-purple));
+    border: none;
+    box-shadow: var(--main-dark-purple-shadow) !important;
+    color: var(--white) !important;
+}
+.form-control::placeholder {
+    color: var(--placeholder-color);
+}
+.form-text {
+    font-size: 1rem;
+    color: var(--gold);
+}
+.music-submit {
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    box-shadow: var(--main-dark-purple-shadow) , 0 0 20px var(--gold);
+    color: var(--purple);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    background-color: var(--gold);
+    transition: 0.5s;
+}
+.music-submit:hover {
+    transform: scale(1.05);
+}
+.music-submit:disabled {
+    background: var(--dark-black-purple);
+    box-shadow: var(--main-dark-purple-shadow);
+}
+.music-submit:disabled:hover {
+    transform: none;
+}
+#music-profile {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

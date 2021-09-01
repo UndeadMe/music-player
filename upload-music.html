@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload song</title>
+    <!-- ! -------------------------------- links -------------------------------- ! -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="public/content/css/upload-song.css">
+</head>
+<body>
+    <!-- ! -------------------------------- aside -------------------------------- ! -->
+    <aside class="aside">
+        <ul class="list-unstyled py-3">
+            <li class="w-100 text-center aside-item d-flex">
+                <a href="my-musics.html" class="w-100 aside-link">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+            </li>
+            <li class="w-100 text-center aside-item d-flex">
+                <a href="" class="w-100 aside-link">
+                    <i class='bx bxs-playlist'></i>
+                </a>
+            </li>
+            <li class="w-100 text-center aside-item d-flex active">
+                <a href="upload-music.html" class="w-100 aside-link">
+                    <i class='bx bx-cloud-upload'></i>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <!-- ! -------------------------------- wrap --------------------------------- ! -->
+    <div class="wrap">
+
+        <div class="container">
+            
+            <div class="col-12 text-center">
+                <h1 class="upload-title">upload your song <i class='bx bx-music bx-tada' ></i></h1>
+            </div>
+    
+            <!-- ! ---------------------------- upload files ----------------------------- ! -->
+            <div class="row justify-content-center mt-5">
+
+                <div class="col-8">
+
+                    <form action="" autocomplete="off">
+
+                        <div class="col-12">
+                            <!-- ! -------------------------- upload song file --------------------------- ! -->
+                            <label class="upload-box" for="upload-file">
+                                <i class="bx bx-cloud-upload bx-fade-up me-3"></i> song                            
+                                <input type="file" class="d-none" id="upload-file" name="songInput" accept="audio/*">
+                            </label>
+                        </div>
+    
+                        <div class="col-12 mt-3 d-flex justify-content-between">
+    
+                            <div class="col-4">
+                                <!-- ! -------------------------- upload cover song --------------------------- ! -->
+                                <label for="upload-music-cover" class="upload-music-cover">
+                                    <i class='bx bx-image-add'></i>
+                                    <input type="file" id="upload-music-cover" name="songImage" class="d-none" accept="image/*">
+                                    <img src="public/content/img/profile-default/default.jpg" id="music-profile" alt="">
+                                </label>
+                            </div>
+    
+                            <div class="col-7 d-flex flex-column justify-content-evenly">
+                                <!-- ! -------------------------- name music input --------------------------- ! -->
+                                <div class="col-12">
+                                    <input type="text" id="song-name-input" class="form-control form-control-lg" name="songName" placeholder="Singer" required>
+                                    <!-- <small class="form-text">valid</small> -->
+                                </div>
+                                <!-- ! ------------------------- name of music input ------------------------- ! -->
+                                <div class="col-12">
+                                    <input type="text" id="song-desc-input" class="form-control form-control-lg" name="songDesc" placeholder="The name of music" required>
+                                    <!-- <small class="form-text">valid</small> -->
+                                </div>
+                                <!-- ! --------------------------- submit buttoon ---------------------------- ! -->
+                                <div class="col-12">
+                                    <input type="submit" class="w-100 music-submit" id="submit-button" value="add music">
+                                </div>
+                            </div>
+    
+                        </div>
+
+                    </form>
+
+                </div>
+                
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ! ------------------------------- scripts ------------------------------- ! -->
+    <script src="public/content/js/upload-song.js"></script>
+</body>
+</html>

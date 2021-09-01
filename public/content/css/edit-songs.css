@@ -1,0 +1,152 @@
+@import url(../../components/navbar/navbar.css);
+
+.wrap {
+    height: 100vh;
+    position: relative;
+    background-image: url(../img/header/1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: saturate(150%);
+}
+.wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-black);
+    opacity: 0.5;
+}
+/* ------------------------------- wrap title ------------------------------- */
+.wrap-title {
+    margin : 100px 0;
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold) ;
+    text-transform: capitalize;
+    z-index: 10;
+    cursor: default;
+}
+.wrap-title i {
+    text-shadow: 0 0 6px var(--gold);
+}
+/* ---------------------------- upload song cover input --------------------------- */
+.inputs-container {
+    z-index: 10;
+}
+.upload-song-cover-label {
+    z-index: 10;
+    width: 100%;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px var(--gold);
+    background: linear-gradient(to right bottom , var(--purple) 50% , var(--light-purple) 100%);
+    box-shadow: var(--main-dark-purple-shadow);
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    cursor: cell;
+}
+.upload-song-cover-label i {
+    z-index: 10;
+    opacity: 0;
+    transition: 0.5s;
+}
+.upload-song-cover-label::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-black);
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1;
+}
+.upload-song-cover-label:hover::before {
+    opacity: 0.5;
+}
+.upload-song-cover-label:hover i {
+    opacity: 1;
+}
+#song-cover-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter : saturate(60%)
+}
+/* -------------------- singer input and music name input ------------------- */
+.singer-input-title , .music-name-title {
+    color: var(--white);
+    text-shadow: 0 0 10px var(--light-purple);
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    cursor: default;
+}
+.singer-input , .music-name-input {
+    margin-top: 5px;
+    border: none;
+    background : linear-gradient(45deg , var(--minimal-purple) 50% , var(--purple) 100%);
+    border: var(--light-border) !important;
+    box-shadow: var(--main-dark-purple-shadow) !important;
+    color: var(--white) !important;
+    padding: 8px 10px;
+}
+.singer-input::placeholder , .music-name-input::placeholder {
+    color: var(--placeholder-color);
+}
+/* ------------------------------- submit info ------------------------------ */
+.submit-info {
+    border: var(--light-border);
+    width: 100%;
+    margin-top: 35px;
+    padding: 8px 0;
+    background-color: var(--gold);
+    border-radius: 10px;
+    color: var(--dark-purple);
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+.submit-info:hover {
+    box-shadow: 0 0 10px var(--gold);
+}
+.submit-info:disabled {
+    background-color: var(--dark-black);
+    box-shadow: var(--main-dark-purple-shadow);
+    color: var(--light-purple);
+    cursor: no-drop;
+}
+/* -------------------------------- form text ------------------------------- */
+.form-text {
+    font-size: 20px;
+    color: var(--gold);
+    text-shadow: 3px 3px 10px var(--dark-black);
+}
+.form-text-animate {
+    animation: form-text 0.3s cubic-bezier(.76,.21,.31,.75) alternate forwards;
+}
+@keyframes form-text {
+    0% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* -------------------------------- note text ------------------------------- */
+.note-text {
+    margin-top: 60px;
+    z-index: 10;
+    color: var(--white);
+    cursor: default;
+}
+.note-text span {
+    color: var(--gold);
+}

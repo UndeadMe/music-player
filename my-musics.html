@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my songs</title>
+    <!-- ! -------------------------------- links -------------------------------- ! -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="public/content/css/my-songs.css">
+</head>
+<body>
+    <!-- ! -------------------------------- aside -------------------------------- ! -->
+    <aside class="aside">
+        <ul class="list-unstyled py-3">
+            <li class="w-100 text-center aside-item d-flex active">
+                <a href="my-musics.html" class="w-100 aside-link">
+                    <i class='bx bxl-tiktok'></i>
+                </a>
+            </li>
+            <li class="w-100 text-center aside-item d-flex">
+                <a href="" class="w-100 aside-link">
+                    <i class='bx bxs-playlist'></i>
+                </a>
+            </li>
+            <li class="w-100 text-center aside-item d-flex">
+                <a href="upload-music.html" class="w-100 aside-link">
+                    <i class='bx bx-cloud-upload'></i>
+                </a>
+            </li>
+        </ul>
+    </aside>
+    <!-- ! ---------------------------- music player ----------------------------- ! -->
+    <div class="music-player px-3 d-flex align-items-center" id="music-player">
+        <div class="container-fluid">
+            
+            <div class="row">
+                <!-- ! -------------------------- music description -------------------------- ! -->
+                <div class="col-3 music-image-box d-flex">
+                    <img src="" class="music-img" id="music-player-img" alt="">
+                    <div class="music-img-box-titles ms-3 d-flex flex-column justify-content-center">
+                        <h5 id="music-player-singer-name"></h5>
+                        <h6 id="music-player-music-name"></h6>
+                    </div>
+                </div>
+                <!-- ! ---------------------------- music player ----------------------------- ! -->
+                <div class="col-6 d-flex flex-column justify-content-center">
+                    
+                    <div class="d-flex justify-content-center col-12">
+                        <button class="music-prev-button" id="prev-btn">
+                            <i class='bx bx-skip-previous'></i>
+                        </button>
+                        <button class="music-play-button" id="music-player-play-btn">
+                            <i class="bx bx-play"></i>
+                        </button>
+                        <button class="music-next-button" id="next-btn">
+                            <i class='bx bx-skip-next'></i>
+                        </button>
+                        <button class="music-repeat-button" id="repeat-btn">
+                            <i class='bx bx-sync'></i>
+                        </button>
+                    </div>
+
+                    <div class="timeline-box d-flex col-12 text-start align-items-center justify-content-center mt-2">
+                        <time class="me-3" id="music-player-time-start">0:00</time>
+                        
+                        <div class="music-player-time-line" id="music-player-time-line-box">
+                            <div class="time-line" id="music-player-time-line">
+
+                            </div>
+                        </div>
+
+                        <time class="ms-3" id="music-player-time-end"></time>
+                    </div>
+
+                </div>
+                <!-- ! ---------------------------- music volume ----------------------------- ! -->
+                <div class="col-3 d-flex justify-content-end align-items-center music-volume-box">
+                    <!-- ! ----------------------------- volume box ------------------------------ ! -->
+                    <div class="volume-box">
+                        <span class="volume" id="music-player-volume-icon"><i class='bx bx-volume-full'></i></span>
+                        <div class="volume-time-line-box">
+                            <div class="volume-time-line-progress" id="progress-css-volume">
+                                <div class="time-line" style="height: 100%;" id="music-player-volume-time-line">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ! ------------------------- play back rate box -------------------------- ! -->
+                    <div class="play-back-rate-box position-relative me-2">
+                        <span class="play-back-rate" id="music-player-volume-icon"><i class='bx bx-timer'></i></span>
+                        <div class="play-back-rate-dropdown-box">
+                            <ul class="list-unstyled p-0 m-0">
+                                <li class="play-back-rate-dropdown-item">
+                                    2
+                                </li>
+                                <li class="play-back-rate-dropdown-item">
+                                    1.75
+                                </li>
+                                <li class="play-back-rate-dropdown-item">
+                                    1.50
+                                </li>
+                                <li class="play-back-rate-dropdown-item">
+                                    1.25
+                                </li>
+                                <li class="play-back-rate-dropdown-item active">
+                                    1
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ! -------------------------------- wrap --------------------------------- ! -->
+    <div class="wrap">
+        <!-- ! ------------------------------- header -------------------------------- ! -->
+        <header>
+
+            <div class="container">
+                
+                <div class="row text-center py-5 justify-content-center">
+                    
+                    <div class="col-8 text-center d-flex flex-column align-items-center mb-5" style="z-index: 10;">
+
+                        <h1 class="search-title">
+                            search your
+                            <span class="music-icon">
+                                <i class='bx bxl-tiktok bx-tada' ></i>
+                            </span>
+                        </h1>
+
+                        <div class="input-group header-input-group">
+                            <span class="input-group-text header-input-text">
+                                <i class='bx bx-music'></i>
+                            </span>
+                            <input type="text" class="form-control header-search-input" id="search-input" placeholder="search your music">
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+        </header>
+        <!-- ! -------------------------------- main --------------------------------- ! -->
+        <main class="mt-5">
+            <div class="container" id="main-container">
+                <!-- ! ----------------------------- main titles ----------------------------- ! -->
+                <div class="row">
+                    
+                    <div class="col-6">
+                        <h6 class="main-title">musics</h6>
+                        <h3 class="main-title">my music</h3>
+                    </div>
+
+                    <div class="col-6 d-flex justify-content-end align-items-center">
+                        <!-- ! ---------------------------- sort dropdown ---------------------------- ! -->
+                        <div class="custom-dropdown sort-dropdown me-3 px-3">
+                            <p class="sort-dropdown-text">
+                                <span>
+                                    sort by : default
+                                </span>
+                                <span class="sort-dropdown-text-icon">
+                                    <i class='bx bxs-down-arrow'></i>
+                                </span>
+                            </p>
+                            <div class="sort-dropdown-menu">
+                                <ul class="p-0 m-0 list-unstyled">
+                                    <li class="sort-dropdown-menu-item">
+                                        default
+                                    </li>
+                                    <li class="sort-dropdown-menu-item">
+                                        singer name
+                                    </li>
+                                    <li class="sort-dropdown-menu-item">
+                                        music name
+                                    </li>
+                                    <li class="sort-dropdown-menu-item">
+                                        time
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- ! -------------------------- end sort dropdown -------------------------- ! -->
+                        <a href="upload-music.html" class="add-music-button">
+                            add <i class='bx bx-music ms-2'></i>
+                        </a>
+                        <!-- ! ---------------------------- window button ---------------------------- ! -->
+                        <button class="window-button">
+                            <i class='bx bx-list-ul'></i>
+                            <i class='bx bx-grid-alt'></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- ! -------------------------- musics boxs wrap --------------------------- ! -->
+
+                <div class="row" id="musics-wrap"></div>
+
+            </div>
+        </main>
+    </div>
+    <script src="public/content/js/my-musics.js"></script>
+    <script src="public/components/dropdown/dropdown.js"></script>
+</body>
+</html>

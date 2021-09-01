@@ -1,0 +1,404 @@
+@import url(../../components/navbar/navbar.css);
+@import url(../../components/music-player/player.css);
+@import url(../../components/dropdown/dropdown.css);
+
+body {
+    background-color: var(--dark-black-purple);
+}
+/* ! --------------------------------- header --------------------------------- */
+header {
+    position: relative;
+    /* height: 45vh; */
+    background-image: url(../img/header/header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* border-bottom: var(--light-border); */
+    z-index: 0;
+    filter: saturate(200%);
+}
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-black);
+    opacity: 0.6;
+    z-index: 0;
+    transition: 0.5s;
+}
+.search-title {
+    margin: 50px 0;
+    text-transform: capitalize;
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--gold);
+}
+.music-icon {
+    text-shadow: 3px 3px 3px var(--purple) , 0 0 30px var(--gold);
+}
+.header-input-group {
+    box-shadow: var(--main-dark-purple-shadow) !important;
+    border-radius: 50px;
+    overflow: hidden;
+    width: 70%;
+}
+.header-input-text {
+    border: none;
+    background-color: var(--purple) ;
+    padding-left: 20px ;
+    font-size: 1.3rem;
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold);
+}
+.header-search-input {
+    background : linear-gradient(to right , var(--purple) 30% , var(--minimal-purple) 100%);
+    box-shadow: none !important;
+    border: none !important;
+    height: 45px;
+    font-size: 1.1rem;
+    color: var(--white) !important ;
+}
+.header-search-input::placeholder {
+    color: var(--placeholder-color) ;
+    text-transform: capitalize;
+}
+/* ! ---------------------------------- main ---------------------------------- */
+main {
+    margin-bottom: 150px;
+}
+.main-title {
+    text-transform: capitalize;
+    text-shadow: 3px 3px 10px var(--dark-black);
+}
+.main-title:first-child {
+    color: var(--music-title);
+}
+.main-title:last-child {
+    color: var(--gold);
+}
+.add-music-button {
+    background-color: transparent;
+    border: 1px solid var(--gold) ;
+    border-radius: 8px;
+    padding: 8px 20px;
+    color: var(--gold);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+.add-music-button i {
+    font-size: 1.3rem;
+}
+.add-music-button:hover {
+    background-color: var(--gold);
+    color: var(--minimal-purple);
+    box-shadow: 0 0 10px var(--minimal-purple);
+}
+/* ! -------------------------------- error box ------------------------------- ! */
+.error-box {
+    background-color: var(--dark-purple);
+    padding: 13px 20px;
+    border-radius: 10px;
+    border: var(--light-border);
+    color: var(--light-purple);
+    font-size: 1.2rem;
+}
+/* ! ----------------------------- custom dropdown ---------------------------- ! */
+.sort-dropdown {
+    background-color: transparent;
+    border: var(--gold) 1px solid;
+    transition: 0.4s ;
+    height: 41.6px;
+    border: var(--gold) 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+.sort-dropdown-text {
+    color: var(--gold);
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sort-dropdown-text span:last-child {
+    margin-left: 15px;
+    margin-bottom: -5px;
+}
+.sort-dropdown:hover {
+    background-color: var(--gold);
+    box-shadow: 0 0 10px var(--minimal-purple);
+}
+.sort-dropdown:hover .sort-dropdown-text {
+    color: var(--minimal-purple);
+}
+.sort-dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(0);
+    border: 1px solid var(--minimal-purple);
+    background-color: var(--dark-black-purple);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--dark-black-purple);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    padding: 0 !important;
+    overflow: hidden;
+    transition: 0.4s all;
+}
+.sort-dropdown-text span:last-child  {
+    transition: transform 0.4s;
+    font-size: .8rem;
+}
+.sort-dropdown.active .sort-dropdown-text span:last-child {
+    transform: rotate(180deg);
+    margin-bottom: 0;
+}
+.sort-dropdown .sort-dropdown-menu-item:hover {
+    background-color: var(--minimal-purple) ;
+    color: var(--white);
+}
+.sort-dropdown .sort-dropdown-menu-item {
+    padding: 10px;
+    color: var(--gold);
+    font-size: 0.9rem;
+    transition: background-color 0.4s;
+}
+.sort-dropdown-menu-item:not(:first-child) {
+    margin-top: 5px;
+}
+.sort-dropdown.active .sort-dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(10px);
+}
+/* ! ------------------------------ window button ----------------------------- ! */
+.window-button {
+    outline: none;
+    background-color: transparent;
+    border : var(--gold) 1px solid;
+    color: var(--gold);
+    padding: 0 8px;
+    font-size: 1.6rem;
+    height: 41.6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-left: 15px;
+    transition: 0.4s ;
+}
+.window-button:hover {
+    background-color: var(--gold);
+    color: var(--minimal-purple);
+}
+.window-button i {
+    transition: transform 0.4s , font-size 0.4s , color 0s;
+}
+.window-button i:first-child {
+    transform: translateY(-30px);
+}
+.window-button i:last-child {
+    transform: translateY(-13px);
+}
+.window-button.active {
+    padding: 0 5px;
+}
+.window-button.active i:first-child {
+    transform: translateY(13px);
+    font-size: 2rem ;
+}
+.window-button.active i:last-child {
+    transform: translateY(30px);
+}
+/* ! ------------------------------- musicx boxs ------------------------------ ! */
+.music-box {
+    padding: 15px 20px;
+    background-image: linear-gradient(-45deg , var(--dark-black) 50% , var(--dark-purple) 70% );
+    border-radius: 10px;
+    border: var(--light-border);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.music-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(10px , 10px);
+    width: 100%;
+    height: 100%;
+    background: var(--music-box-active);
+    box-shadow: var(--music-box-shadow);
+    border-radius: 10px;
+    border: var(--music-box-border);
+    z-index: -1;
+}
+.music-box-column {
+    display: flex;
+    align-items: center;
+}
+.music-element-singer , .music-element-name , .music-element-time {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.music-element-singer {
+    color: var(--gold);
+}
+.music-element-name , .music-element-time {
+    color: var(--music-text-box);
+}
+.music-options-button {
+    outline: none;
+    border: var(--light-border);
+    font-size: 1.3rem;
+    padding: 0 !important;
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    background: var(--minimal-purple);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.4s , box-shadow 0.3s;
+}
+.music-options-button a {
+    color : var(--white);
+}
+.music-options-button:hover {
+    background-color: var(--light-purple);
+    box-shadow: 0 0 10px var(--light-purple);
+}
+.music-play-button-play i {
+    margin-right: -2px;
+}
+.music-options-button:not(:last-child) {
+    margin-right: 20px;
+}
+.music-options-button:active {
+    box-shadow: inset 0 0 5px var(--dark-black-purple);
+}
+/* ! ---------------------------- music box active ---------------------------- ! */
+.music-box.active {
+    background: var(--music-box-active);
+    border: var(--light-border);
+}
+.music-box.active::before {
+    background: var(--music-box-active);
+}
+.music-box.active .music-element-singer {
+    text-shadow: 1px 1px 1px black;
+}
+.music-box.active .music-element-name , .music-element-time {
+    text-shadow: 1px 1px 1px black;
+    color: var(--white);
+}
+.music-box.active .music-options-button {
+    background: linear-gradient(45deg, var(--gold), var(--orange));
+    color: var(--dark-black);
+}
+.music-box.active .music-options-button a {
+    color: var(--dark-black);
+}
+.music-box.active .music-options-button:hover {
+    background : linear-gradient(45deg, var(--gold), var(--gold));
+    box-shadow: 0 0 10px var(--light-purple);
+}
+/* ! ---------------------------- music box window ---------------------------- ! */
+.music-box-window-img-box {
+    position: relative;
+}
+.music-box-window.active .music-box-window-img-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    border-radius: 10px;
+    opacity: 0.3;
+    background: var(--gold);
+}
+.music-box-window-img {
+    border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+.music-box-window-singer-name {
+    color: var(--gold);
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+.music-box-window-music-name {
+    color: var(--white);
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+.music-box-window-music-time {
+    color: var(--white);
+}
+.msuic-box-window-left-box h4 {
+    overflow: hidden;
+    height: 30px;
+}
+.msuic-box-window-left-box h6 {
+    height: 20px;
+    overflow: hidden;
+}
+.music-box-window-dropdown {
+    position: relative;
+}
+.music-box-window-dropdown h2 {
+    cursor: pointer;
+}
+.music-box-window-dropdown-menu {
+    position: absolute;
+    bottom: 100%;
+    transform: translateY(0);
+    width: 60px;
+    right: -7px;
+    background: var(--dark-purple);
+    border: var(--minimal-purple) 1px solid;
+    box-shadow: 0 0 10px var(--dark-purple);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+.music-box-window-dropdown.active .music-box-window-dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-10px);
+}
+.music-box-window-dropdown-menu-item {
+    color: var(--gold);
+    padding: 7px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.music-box-window-dropdown-menu-item i {
+    margin-bottom: -3px;
+}
+.music-box-window-dropdown-menu-item:hover {
+    background-color: var(--minimal-purple);
+    color: var(--white);
+}
+.music-box-window-dropdown-menu-item:not(:first-child) {
+    margin-top: 10px;
+}

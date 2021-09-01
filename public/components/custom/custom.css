@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+:root {
+    --dark-purple : #10002b ;
+    --dark-black-purple : #240046 ;
+    --dark-black : #03071e ;
+    --orange : #ff9e00 ;
+    --gold : #fc0 ;
+    --minimal-purple : #5a189a ;
+    --white : #fff ;
+    --light-purple : #9d4edd ;
+    --purple : #6247aa ;
+    --music-title : rgba(255, 255, 255, 0.8) ;
+    --placeholder-color : #dbdbdb;
+    --music-text-box : #dabfff;
+    --music-box-active : #3c096c ;
+
+    --main-dark-purple-shadow : 5px 5px 10px rgba(13, 0, 36, 0.6), -5px -5px 10px rgba(19, 0, 50, 0.5);
+    --main-dark-black-shadow : 5px 5px 10px rgba(0, 0, 0, 0.8) ;
+    --music-box-shadow :  5px 5px 10px #16002e,-5px -5px 10px #340064;
+
+    --light-border : 1px groove rgba(255, 255, 255 , 0.2);
+    --music-box-border : 1px solid rgba(255, 255, 255 , 0.28) ;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+/* ------------------------------- scroll bar ------------------------------- */
+::-webkit-scrollbar {
+    width: 1.4rem;
+    background-color: transparent;
+    background: var(--dark-black-purple);
+    border-left: 1px solid var(--dark-purple);
+}
+:root::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    border: .45rem solid transparent;
+    background-color: var(--gold);
+    background-clip: content-box;
+    -webkit-background-clip: content;
+}
+* {
+    user-select: none;
+}
