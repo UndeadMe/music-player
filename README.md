@@ -1,2 +1,5 @@
-# music-player
-install node js and go to the music player directory open the terminal and type npm i to install packages then you can run my-musics.html 
+# How To Run Project
+- 1 - install **Node Js**
+- 2 - go to music player directory and open command line or terminal
+- 3 - type npm i command line or terminal
+- 4 - open my-musics.html and enjoy :D
